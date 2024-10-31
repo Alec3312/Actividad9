@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    background-color: #40eaf9;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"] {
+    width: calc(100% - 50px);
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: #37fd25;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  .tareas {
+    margin-top: 20px;
+  }
+  
+  .tarea {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid #b623ff;
+  }
+  
+  .tarea span {
+    flex: 1;
+  }
+  
+  .tarea .check-icon {
+    color: green;
+  }
+  
+  .tarea .delete-icon {
+    color: red;
+  }
+  
+  .progreso {
+    margin-top: 10px;
+    background-color: #ddd;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .barra {
+    background-color: #66ff66;
+    height: 100%;
+    transition: width 0.3s;
+  }
+  
+  .completada {
+    text-decoration: line-through;
+  }
+  

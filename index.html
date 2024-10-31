@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Tareas - Vue.js</title>
+  <link rel="stylesheet" href="estilo.css">
+  <!-- Enlace a la librería de Vue.js desde CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+  <div id="app" class="container">
+    <h1>Lista de Tareas</h1>
+    <!-- Campo de texto para agregar una nueva tarea -->
+    <input type="text" v-model="nuevaTarea" placeholder="Escribe una tarea..." />
+    <!-- Botón para agregar la nueva tarea a la lista -->
+    <button @click="agregarTarea">Agregar</button>
+
+    <!-- Sección donde se muestran las tareas -->
+    <div class="tareas">
+      <!-- Ciclo que recorre el array de tareas y muestra cada tarea -->
+      <div v-for="(tarea, index) in tareas" :key="index" class="tarea">
+        <!-- Texto de la tarea; se aplica una clase si la tarea está completada -->
+        <span :class="{ completada: tarea.completada }">{{ tarea.texto }}</span>
+        <!-- Botón para marcar una tarea como completada -->
+        <button @click="completarTarea(index)">
+          <i class="check-icon">✓</i>
+        </button>
+        <!-- Botón para eliminar una tarea de la lista -->
+        <button @click="eliminarTarea(index)">
+          <i class="delete-icon">✗</i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Barra de progreso que muestra el porcentaje de tareas completadas -->
+    <div class="progreso">
+      <!-- Barra interna que cambia su ancho basado en el porcentaje de tareas completadas -->
+      <div class="barra" :style="{ width: porcentajeCompletado + '%' }"></div>
+      <!-- Muestra el porcentaje de tareas completadas en texto -->
+      <span>{{ porcentajeCompletado }}%</span>
+    </div>
+    <!-- Muestra la cantidad total de tareas completadas -->
+    <p>Tareas Completas: {{ tareasCompletas }}</p>
+  </div>
+
+  <!-- Enlace al archivo JavaScript donde se encuentra la lógica de Vue.js -->
+  <script src="script.js"></script>
+</body>
+</html>
